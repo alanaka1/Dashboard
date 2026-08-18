@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<!-- <html lang="en" dir="rtl" data-bs-theme="light"> -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professional Bootstrap Dashboard</title>
+
+  <!-- Bootstrap 5.3.8 LTR -->
+  <link id="bootstrapCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Bootstrap 5.3.8 RTL -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW" crossorigin="anonymous"> -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.8/css/dataTables.bootstrap5.min.css">
+
+  <!-- Main + direction stylesheet -->
+  <link rel="stylesheet" href="style-pro.css">
+  <!-- Main + direction stylesheet LTR -->
+  <link id="directionCss" rel="stylesheet" href="style-ltr-pro.css">
+  <!-- Main + direction stylesheet RTL -->
+  <!-- <link id="directionCss" rel="stylesheet" href="style-rtl-pro.css"> -->
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="#" class="brand-link">
+        <span class="brand-icon"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="brand-text">AdminPro</span>
+      </a>
+      <button class="btn sidebar-close d-lg-none" id="sidebarClose" type="button"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="sidebar-user">
+      <img src="https://github.com/mdo.png" alt="User" class="user-avatar">
+      <div class="user-info">
+        <strong>Mahmoud Amin</strong>
+        <span>Administrator</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">MAIN</div>
+      <a href="#" class="sidebar-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a>
+
+      <button class="sidebar-link sidebar-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#ordersMenu" aria-expanded="false">
+        <!-- data-bs-target="#ordersMenu" -->
+        <span class="d-flex align-items-center gap-3"><i class="fa-solid fa-cart-shopping"></i><span>Orders</span></span>
+        <i class="fa-solid fa-chevron-down submenu-arrow"></i>
+      </button>
+      <div class="collapse sidebar-submenu" id="ordersMenu">
+        <!-- id="ordersMenu" -->
+        <a href="#">All Orders</a>
+        <a href="#">Pending Orders</a>
+        <a href="#">Completed</a>
+      </div>
+      <button class="sidebar-link sidebar-dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#productsMenu" aria-expanded="false">
+        <!-- data-bs-target="#productsMenu" -->
+        <span class="d-flex align-items-center gap-3"><i class="fa-solid fa-cart-shopping"></i><span>Products</span></span>
+        <i class="fa-solid fa-chevron-down submenu-arrow"></i>
+      </button>
+      <div class="collapse sidebar-submenu" id="productsMenu">
+        <!-- id="productsMenu" -->
+        <a href="#">All Products</a>
+        <a href="#">Pending Products</a>
+        <a href="#">Completed</a>
+      </div>
+
+      <div class="nav-section-title mt-3">MANAGEMENT</div>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-box-open"></i><span>Products</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i><span>Invoices</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="app-content" id="appContent">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-icon" id="sidebarToggle" type="button" title="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+        <div class="topbar-search d-none d-md-flex">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search..." aria-label="Search">
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <!-- Language / Direction -->
+        <div class="dropdown">
+            <button class="btn btn-icon" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Language / Direction">
+                <i class="fa-solid fa-language"></i>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end dashboard-dropdown language-dropdown">
+              <li><h6 class="dropdown-header"><i class="fa-solid fa-globe me-2"></i>Direction</h6></li>
+              <li>
+                  <button class="dropdown-item direction-option" type="button" data-direction="ltr">
+                    <span class="flex-grow-1"><i class="fa-solid fa-globe me-2"></i><strong>English / LTR</strong></span>
+                  </button>
+              </li>
+              <li>
+                  <button class="dropdown-item direction-option" type="button" data-direction="rtl">
+                    <span class="flex-grow-1"><i class="fa-solid fa-globe me-2"></i><strong>العربية / RTL</strong></span>
+                  </button>
+              </li>
+            </ul>
+        </div>
+
+        <button class="btn btn-icon" id="themeToggle" type="button" title="Dark / Light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn btn-icon notification-btn" data-bs-toggle="dropdown" type="button">
+            <i class="fa-regular fa-bell"></i><span class="notification-dot"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end dashboard-dropdown p-0">
+            <div class="dropdown-header-custom">Notifications <span class="badge text-bg-primary">4</span></div>
+            <a class="dropdown-item notification-item" href="#"><span class="notification-icon bg-primary-subtle text-primary"><i class="fa-solid fa-cart-shopping"></i></span><span><strong>New order received</strong><small>2 minutes ago</small></span></a>
+            <a class="dropdown-item notification-item" href="#"><span class="notification-icon bg-success-subtle text-success"><i class="fa-solid fa-user-plus"></i></span><span><strong>New customer joined</strong><small>15 minutes ago</small></span></a>
+            <a class="dropdown-item notification-item" href="#"><span class="notification-icon bg-warning-subtle text-warning"><i class="fa-solid fa-triangle-exclamation"></i></span><span><strong>Low stock alert</strong><small>1 hour ago</small></span></a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn profile-button" data-bs-toggle="dropdown" type="button">
+            <img src="https://github.com/mdo.png" alt="profile">
+            <span class="d-none d-sm-inline">Mahmoud</span>
+            <i class="fa-solid fa-chevron-down small"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dashboard-dropdown">
+            <li><a class="dropdown-item" href="#"><i class="fa-regular fa-user me-2"></i>Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content container-fluid">
+      <div class="page-heading d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome back. Here is what is happening today.</p>
+        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+
+      <section class="row g-3 g-xl-4 mb-4">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-primary-subtle text-primary"><i class="fa-solid fa-chart-column"></i></div>
+            <div class="stat-body"><span>Total Revenue</span><h3>$42,680</h3><small class="text-success"><i class="fa-solid fa-arrow-trend-up"></i> 8.4% this month</small></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-success-subtle text-success"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="stat-body"><span>Total Orders</span><h3>1,284</h3><small class="text-success"><i class="fa-solid fa-arrow-trend-up"></i> 5.1% this month</small></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-warning-subtle text-warning"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-body"><span>Customers</span><h3>8,942</h3><small class="text-success"><i class="fa-solid fa-arrow-trend-up"></i> 12.6% this month</small></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-danger-subtle text-danger"><i class="fa-solid fa-wallet"></i></div>
+            <div class="stat-body"><span>Expenses</span><h3>$9,410</h3><small class="text-danger"><i class="fa-solid fa-arrow-trend-down"></i> 2.2% this month</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row g-4 mb-4">
+        <div class="col-12 col-xl-8">
+          <div class="dashboard-card h-100">
+            <div class="card-header-custom"><div><h5>Revenue Overview</h5><small>Monthly income and expenses</small></div><div class="btn-group btn-group-sm"><button class="btn btn-outline-secondary active">Month</button><button class="btn btn-outline-secondary">Year</button></div></div>
+            <div class="chart-wrap chart-lg"><canvas id="revenueChart"></canvas></div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="dashboard-card h-100">
+            <div class="card-header-custom"><div><h5>Sales by Category</h5><small>Current month</small></div></div>
+            <div class="chart-wrap chart-lg"><canvas id="categoryChart"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row g-4 mb-4">
+        <div class="col-12 col-lg-5">
+          <div class="dashboard-card h-100">
+            <div class="card-header-custom"><div><h5>Order Status</h5><small>Live distribution</small></div></div>
+            <div class="chart-wrap chart-md"><canvas id="ordersChart"></canvas></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="dashboard-card h-100">
+            <div class="card-header-custom"><div><h5>Recent Activity</h5><small>Latest account actions</small></div><a href="#" class="btn btn-sm btn-light">View all</a></div>
+            <div class="activity-list">
+              <div class="activity-item"><span class="activity-icon bg-primary-subtle text-primary"><i class="fa-solid fa-bag-shopping"></i></span><div><strong>Order #1058 was completed</strong><small>Customer payment confirmed</small></div><time>10 min</time></div>
+              <div class="activity-item"><span class="activity-icon bg-success-subtle text-success"><i class="fa-solid fa-user-plus"></i></span><div><strong>New customer registered</strong><small>John Miller joined your store</small></div><time>25 min</time></div>
+              <div class="activity-item"><span class="activity-icon bg-warning-subtle text-warning"><i class="fa-solid fa-box"></i></span><div><strong>Stock updated</strong><small>12 products were modified</small></div><time>1 hr</time></div>
+              <div class="activity-item"><span class="activity-icon bg-danger-subtle text-danger"><i class="fa-solid fa-file-invoice"></i></span><div><strong>Invoice #INV-438 overdue</strong><small>Payment reminder required</small></div><time>3 hr</time></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-card mb-4">
+        <div class="card-header-custom flex-wrap gap-3">
+          <div>
+            <h5>Recent Orders</h5>
+            <small>Manage latest transactions</small>
+          </div>
+          <button class="btn btn-primary btn-sm">i class="fa-solid fa-plus me-1"></i> Add Order</button>
+        </div>
+        <div class="table-responsive p-3">
+          <table id="ordersTable" class="table align-middle table-hover w-100">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#1058</td>
+                <td><div class="table-user"><img src="https://i.pravatar.cc/40?img=1" alt=""><span>Olivia Martin</span></div></td>
+                <td>18 Aug 2026</td>
+                <td>$420.00</td>
+                <td><span class="status-pill status-success">Completed</span></td>
+                <td><button class="btn btn-sm btn-light"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+              <tr>
+                <td>#1057</td>
+                <td><div class="table-user"><img src="https://i.pravatar.cc/40?img=3" alt=""><span>Noah Williams</span></div></td>
+                <td>18 Aug 2026</td>
+                <td>$158.50</td>
+                <td><span class="status-pill status-warning">Pending</span></td>
+                <td><button class="btn btn-sm btn-light"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+              <tr>
+                <td>#1056</td>
+                <td><div class="table-user"><img src="https://i.pravatar.cc/40?img=5" alt=""><span>Emma Brown</span></div></td>
+                <td>17 Aug 2026</td>
+                <td>$895.00</td>
+                <td><span class="status-pill status-info">Processing</span></td>
+                <td><button class="btn btn-sm btn-light"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+              <tr>
+                <td>#1055</td>
+                <td><div class="table-user"><img src="https://i.pravatar.cc/40?img=8" alt=""><span>Liam Wilson</span></div></td>
+                <td>17 Aug 2026</td>
+                <td>$75.40</td>
+                <td><span class="status-pill status-danger">Cancelled</span></td>
+                <td><button class="btn btn-sm btn-light"><i class="fa-solid fa-ellipsis"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="dashboard-footer"><span>© 2026 AdminPro</span><span>Built with Bootstrap 5.3.8</span></footer>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.8/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="javascript-pro.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.dashboard-main{
+  padding-left: 200px;
+}
+.dashboard-main.active{
+  padding-left: 0;
+}
+
+/************ DataTable ****************/
+.dataTableStyle .dt-container .dt-length select{
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .dashboard-main{
+    padding-left: 0;
+  }
+  .dashboard-main.active{
+    padding-left: 200px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .dashboard-main.active{
+    padding-left: 0;
+  }
+}
