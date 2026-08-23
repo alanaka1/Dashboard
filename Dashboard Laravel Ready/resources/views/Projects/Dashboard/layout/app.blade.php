@@ -1,26 +1,11 @@
 <!doctype html>
-@if (in_array(app()->getLocale(), ['en', 'tr'], true))
-<!-- LTR -->
-<html lang="en" dir="ltr" data-bs-theme="light">
-@elseif(app()->getLocale() == 'ar')
-<!-- RTL -->
-<html lang="ar" dir="rtl" data-bs-theme="light">
-@endif
+@include('Projects.Dashboard.Sass.dir')
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
 
-    @if (in_array(app()->getLocale(), ['en', 'tr'], true))
-        <!-- Bootstrap 5.3.8 LTR -->
-        <link id="bootstrapCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    @elseif(app()->getLocale() == 'ar')
-        <!-- Bootstrap 5.3.8 RTL -->
-        <link id="bootstrapCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css">
-    @endif
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  @include('Projects.Dashboard.Sass.css')
 
     <!-- Main + direction stylesheet -->
     <link rel="stylesheet" href="{{ asset('Projects/Dashboard/css/style.css') }}">
@@ -55,13 +40,14 @@
 
     </main>
 
-    <footer class="dashboard-footer"><span>© 2026 AdminPro</span><span>Built with Bootstrap 5.3.8</span></footer>
+    <footer class="dashboard-footer">
+      <span>© 2026 AdminPro</span>
+      <span>Built with Bootstrap 5.3.8</span>
+    </footer>
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@include('Projects.Dashboard.Sass.javascript')
 <script src="{{ asset('Projects/Dashboard/js/javascript.js') }}"></script>
 @yield('javascript')
 </body>
