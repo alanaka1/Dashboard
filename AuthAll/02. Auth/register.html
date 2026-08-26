@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register - AdminPro</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="auth-style.css">
+    <link rel="stylesheet" href="auth-ltr.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-shape auth-shape-1"></div>
+    <div class="auth-shape auth-shape-2"></div>
+
+    <button type="button" class="auth-theme-toggle" id="themeToggle">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-card">
+
+            <aside class="auth-visual">
+
+                <a href="#" class="auth-brand">
+                    <span class="auth-brand-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </span>
+
+                    <span>AdminPro</span>
+                </a>
+
+                <div class="auth-visual-content">
+
+                    <span class="auth-badge">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Create Workspace
+                    </span>
+
+                    <h1>
+                        Start managing
+                        <span>smarter today.</span>
+                    </h1>
+
+                    <p>
+                        Create your account and get access to a professional workspace built for efficient business management.
+                    </p>
+
+                </div>
+
+                <div class="auth-visual-footer">
+                    <span>© 2026 AdminPro</span>
+                    <span>Professional Dashboard</span>
+                </div>
+
+            </aside>
+
+
+            <main class="auth-form-panel">
+
+                <div class="auth-form-container">
+
+                    <div class="auth-form-heading">
+                        <span class="auth-form-label">Get Started</span>
+
+                        <h2>Create your account</h2>
+
+                        <p>
+                            Enter your information below.
+                        </p>
+                    </div>
+
+
+                    <form id="registerForm" action="" method="POST" class="auth-form">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+
+                            <div class="auth-field">
+                                <i class="fa-regular fa-user auth-field-icon"></i>
+
+                                <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Enter your full name" autocomplete="name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+
+                            <div class="auth-field">
+                                <i class="fa-regular fa-envelope auth-field-icon"></i>
+
+                                <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+
+                            <div class="auth-field">
+                                <i class="fa-solid fa-lock auth-field-icon"></i>
+
+                                <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="Create password" autocomplete="new-password" required>
+
+                                <button type="button" class="auth-password-toggle" data-password-toggle="password">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="passwordConfirmation" class="form-label">Confirm Password</label>
+
+                            <div class="auth-field">
+                                <i class="fa-solid fa-shield-halved auth-field-icon"></i>
+
+                                <input type="password" class="form-control form-control-sm" id="passwordConfirmation" name="password_confirmation" placeholder="Confirm password" autocomplete="new-password" required>
+
+                                <button type="button" class="auth-password-toggle" data-password-toggle="passwordConfirmation">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">I agree to the Terms & Conditions</label>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary btn-sm auth-submit w-100">
+                            <span>Create Account</span>
+                            <i class="fa-solid fa-arrow-right auth-icon-end"></i>
+                        </button>
+
+
+                        <div class="auth-bottom">
+                            <span>Already have an account?</span>
+                            <a href="login.html" class="auth-link">Sign In</a>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* =========================================================
+   AUTH LTR
+========================================================= */
+
+html {
+    direction: ltr;
+}
+
+body {
+    text-align: left;
+}
+
+.auth-visual,
+.auth-form-panel,
+.auth-form-container {
+    text-align: left;
+}
+
+
+/* Font Awesome spacing */
+
+.auth-icon-start {
+    margin-right: 6px;
+}
+
+.auth-icon-end {
+    margin-left: 6px;
+}

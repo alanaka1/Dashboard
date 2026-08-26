@@ -1,0 +1,28 @@
+/* =========================================================
+   AUTH RTL
+========================================================= */
+
+html {
+    direction: rtl;
+}
+
+body {
+    text-align: right;
+}
+
+.auth-visual,
+.auth-form-panel,
+.auth-form-container {
+    text-align: right;
+}
+
+
+/* Font Awesome spacing */
+
+.auth-icon-start {
+    margin-left: 6px;
+}
+
+.auth-icon-end {
+    margin-right: 6px;
+}
