@@ -1,12 +1,9 @@
 <!doctype html>
 @include('Projects.Sass.dir')
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>@yield('title')</title>
-
     @include('Projects.Sass.css')
     <!-- Auth Only -->
     <link rel="stylesheet" href="{{ asset('Projects/Auth/css/style.css') }}">
@@ -27,6 +24,7 @@
         <i class="fa-solid fa-moon"></i>
     </button>
 
+
     <main class="auth-page">
         <div class="auth-container">
             <!-- Brand -->
@@ -36,12 +34,13 @@
                 </span>
                 <span class="auth-brand-name">AdminPro</span>
             </a>
-            @yield('content')            
+            @yield('content')
         </div>
     </main>
 
     @include('Projects.Sass.javascript')
     <script src="{{ asset('Projects/Auth/js/javascript.js') }}"></script>
     @yield('javascript')
+
 </body>
 </html>

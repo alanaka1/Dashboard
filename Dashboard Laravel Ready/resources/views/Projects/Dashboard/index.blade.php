@@ -1,6 +1,9 @@
 @extends('Projects.Dashboard.layout.app')
  
 @section('title', 'Professional Bootstrap Dashboard')
+
+@section('css')
+@endsection
  
 @section('content')
 
@@ -16,6 +19,7 @@
         </ol>
     </nav>
 </div>
+
 @include('Projects.Dashboard.include.topcard')
 
 @include('Projects.Dashboard.include.chart')
@@ -39,13 +43,7 @@
             <div class="custom-table-length">
                 <label for="ordersLength">Show</label>
                 <select id="ordersLength" class="form-select form-select-sm">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    <option value="150">150</option>
-                    <option value="200">200</option>
+                    @include('Projects.Dashboard.include.ordersLength')
                 </select>
                 <span>entries</span>
             </div>
@@ -1723,6 +1721,7 @@
 
     </div>
 </section>
+
 @endsection
 
 @section('javascript')
